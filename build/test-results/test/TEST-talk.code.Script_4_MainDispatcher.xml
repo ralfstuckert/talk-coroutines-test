@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="talk.code.Script_4_MainDispatcher" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-03-02T14:50:25" hostname="compeople-443.local" time="3.572">
+  <properties/>
+  <testcase name="provide test dispatcher via JUnit extension (aka Rule)(TestCoroutineDispatcher)" classname="talk.code.Script_4_MainDispatcher" time="3.518"/>
+  <testcase name="use dispatcher of test scope for main()" classname="talk.code.Script_4_MainDispatcher" time="0.051"/>
+  <system-out><![CDATA[15:50:26.766 [Test worker @coroutine#1] DEBUG i.m.i.i.AbstractMockFactory - Creating mockk for UI name=#1
+15:50:29.242 [Test worker @coroutine#1] DEBUG i.m.i.i.AbstractMockFactory - Creating mockk for Any name=child of #1#2
+15:50:29.326 [Test worker @coroutine#1] DEBUG i.m.i.r.s.AnsweringStillAcceptingAnswersState - Answering SUSPEND_MARKER on UI(#1).waitForUserConfirm(Press OK to continue, continuation {})
+15:50:29.426 [Test worker @coroutine#3] DEBUG i.m.i.i.AbstractMockFactory - Creating mockk for UI name=#3
+15:50:29.429 [Test worker @coroutine#3] DEBUG i.m.i.i.AbstractMockFactory - Creating mockk for Any name=child of #3#4
+15:50:29.464 [Test worker @coroutine#3] DEBUG i.m.i.r.s.AnsweringStillAcceptingAnswersState - Answering SUSPEND_MARKER on UI(#3).waitForUserConfirm(Press OK to continue, continuation {})
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

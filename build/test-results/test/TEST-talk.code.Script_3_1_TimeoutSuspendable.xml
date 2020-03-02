@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="talk.code.Script_3_1_TimeoutSuspendable" tests="2" skipped="0" failures="0" errors="0" timestamp="2020-03-02T14:50:29" hostname="compeople-443.local" time="0.307">
+  <properties/>
+  <testcase name="testing timeout with a mockk service()" classname="talk.code.Script_3_1_TimeoutSuspendable" time="0.287"/>
+  <testcase name="testing in time with a mockk service()" classname="talk.code.Script_3_1_TimeoutSuspendable" time="0.02"/>
+  <system-out><![CDATA[15:50:30.059 [Test worker @coroutine#17] DEBUG i.m.i.i.AbstractMockFactory - Creating mockk for UserService name=#9
+15:50:30.062 [Test worker @coroutine#17] DEBUG i.m.i.i.AbstractMockFactory - Creating mockk for Any name=child of #9#10
+15:50:30.090 [Test worker @coroutine#17] DEBUG i.m.i.r.s.AnsweringStillAcceptingAnswersState - Answering SUSPEND_MARKER on UserService(#9).load(continuation {})
+15:50:30.268 [Test worker @coroutine#19] DEBUG i.m.i.i.AbstractMockFactory - Creating mockk for UserService name=#11
+15:50:30.271 [Test worker @coroutine#19] DEBUG i.m.i.i.AbstractMockFactory - Creating mockk for Any name=child of #11#12
+15:50:30.273 [Test worker @coroutine#19] DEBUG i.m.i.r.s.AnsweringStillAcceptingAnswersState - Answering SUSPEND_MARKER on UserService(#11).load(continuation {})
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

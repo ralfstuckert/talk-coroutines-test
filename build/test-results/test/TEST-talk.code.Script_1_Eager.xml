@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="talk.code.Script_1_Eager" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-03-02T14:50:30" hostname="compeople-443.local" time="0.016">
+  <properties/>
+  <testcase name="no eager excecution in runBlocking()" classname="talk.code.Script_1_Eager" time="0.007"/>
+  <testcase name="eager execution until delay or yield()" classname="talk.code.Script_1_Eager" time="0.004"/>
+  <testcase name="eager excecution in runBlockingTest()" classname="talk.code.Script_1_Eager" time="0.003"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
