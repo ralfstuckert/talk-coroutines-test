@@ -15,7 +15,7 @@
 - `uncaughtExceptions` in TestCoroutineScope is delegated to TestCoroutineExceptionHandler
 
 
-## Propagation in Supe`rvisorScope
+## Propagation in SupervisorScope
 - let it run with `runBlocking()`
 - now with `runBlockingTest()` and explain
 - introduce analyzing exceptions with `uncaughtExceptions`
@@ -24,6 +24,6 @@
 ```
 - introduce custom exception handler
 ```kotlin
-    SilentTestCoroutineExceptionHandler()
+   runBlockingTest(SilentTestCoroutineExceptionHandler()) {
 ```
 
