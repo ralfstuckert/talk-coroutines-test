@@ -1,4 +1,4 @@
-package talk.script
+package talk.live
 
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.runBlockingTest

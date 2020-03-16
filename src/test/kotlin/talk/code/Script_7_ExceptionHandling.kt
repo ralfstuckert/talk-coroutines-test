@@ -2,11 +2,14 @@ package talk.code
 
 import com.natpryce.hamkrest.anyElement
 import com.natpryce.hamkrest.assertion.assertThat
+import coroutines.testExceptionHandler
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.runBlockingTest
+import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import java.io.IOException
+import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.isA
 import coroutines.SilentTestCoroutineExceptionHandler
 import org.junit.jupiter.api.Assertions.assertEquals
@@ -47,8 +50,8 @@ class Script_7_ExceptionHandling {
                 val child2 = launch() {
                     delay(1000)
                 }
+                assertThat(uncaughtExceptions, anyElement(isA<IOException>()))
             }
-            assertThat(uncaughtExceptions, anyElement(isA<IOException>()))
         }
 
 

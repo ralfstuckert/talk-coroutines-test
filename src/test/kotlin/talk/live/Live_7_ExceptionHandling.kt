@@ -1,7 +1,11 @@
-package talk.script
+package talk.live
 
+import com.natpryce.hamkrest.anyElement
+import com.natpryce.hamkrest.assertion.assertThat
+import com.natpryce.hamkrest.isA
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.runBlockingTest
+import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import java.io.IOException
@@ -13,7 +17,7 @@ class Live_7_ExceptionHandling {
     @Test
     fun `TestCoroutineExceptionHandler used by runBlockingTest() catches all exceptions`() {
         assertThrows<IOException> {
-            runBlockingTest() {
+            runBlocking() {
 
                 launch() {
                     throw IOException()

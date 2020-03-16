@@ -1,4 +1,4 @@
-package talk.script
+package talk.live
 
 import api.User
 import api.UserService
@@ -6,7 +6,6 @@ import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.withContext
 import org.junit.jupiter.api.Assertions
@@ -36,7 +35,7 @@ class Live_5_DispatcherProvider {
         val backend: UserService = mockk()
         coEvery { backend.load() } coAnswers {
             // delay in order to check auto-advance of TestDispatcher
-            delay(30_000)
+//            delay(30_000)
             user
         }
 

@@ -7,6 +7,7 @@ import io.mockk.coEvery
 import io.mockk.mockk
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.runBlockingTest
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertSame
 import org.junit.jupiter.api.Test
 
@@ -50,7 +51,7 @@ class Script_3_1_TimeoutSuspendable {
             user
         }
         val loaded = loadUser(backend)
-        assertSame(user, loaded)
+        assertEquals(user, loaded)
     }
 
 

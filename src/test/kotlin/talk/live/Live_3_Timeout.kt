@@ -1,4 +1,4 @@
-package talk.script
+package talk.live
 
 import api.User
 import api.UserService
