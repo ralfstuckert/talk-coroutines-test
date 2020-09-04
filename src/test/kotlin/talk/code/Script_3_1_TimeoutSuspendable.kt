@@ -5,10 +5,11 @@ import api.UserService
 import coroutines.coAssertThrows
 import io.mockk.coEvery
 import io.mockk.mockk
-import kotlinx.coroutines.*
+import kotlinx.coroutines.TimeoutCancellationException
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.withTimeout
 import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertSame
 import org.junit.jupiter.api.Test
 
 //
@@ -24,7 +25,6 @@ suspend fun loadUser(backend: UserService): User =
 // Tests
 //
 
-@UseExperimental(ExperimentalCoroutinesApi::class)
 class Script_3_1_TimeoutSuspendable {
 
     private val user = User("Herbert")

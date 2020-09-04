@@ -1,16 +1,9 @@
 package talk.code
 
-import api.User
-import coroutines.testDispatcher
-import io.mockk.coEvery
-import io.mockk.mockk
 import kotlinx.coroutines.*
 import kotlinx.coroutines.test.runBlockingTest
-import org.junit.jupiter.api.Assertions.assertEquals
-import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-@UseExperimental(ExperimentalCoroutinesApi::class)
 class Script_6_DetectUnrelatedJobs {
 
     @Test

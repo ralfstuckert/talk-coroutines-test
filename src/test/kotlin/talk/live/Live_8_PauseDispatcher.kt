@@ -1,20 +1,18 @@
 package talk.live
 
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import coroutines.AtomicInt
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.yield
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-@UseExperimental(ExperimentalCoroutinesApi::class)
 class Live_8_PauseDispatcher {
 
     @Test
     fun `pause dispatcher`() = runBlockingTest {
-        var state = 0
+        var state by AtomicInt(0)
 
         launch {
             state = 1

@@ -2,20 +2,17 @@ package talk.code
 
 import com.natpryce.hamkrest.anyElement
 import com.natpryce.hamkrest.assertion.assertThat
-import coroutines.testExceptionHandler
-import kotlinx.coroutines.*
+import com.natpryce.hamkrest.isA
+import coroutines.SilentTestCoroutineExceptionHandler
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.test.runBlockingTest
-import org.junit.jupiter.api.Assertions.assertTrue
+import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import java.io.IOException
-import com.natpryce.hamkrest.assertion.assertThat
-import com.natpryce.hamkrest.isA
-import coroutines.SilentTestCoroutineExceptionHandler
-import org.junit.jupiter.api.Assertions.assertEquals
-import java.lang.IllegalArgumentException
 
-@UseExperimental(ExperimentalCoroutinesApi::class)
 class Script_7_ExceptionHandling {
 
     @Test

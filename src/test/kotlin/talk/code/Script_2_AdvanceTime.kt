@@ -4,7 +4,6 @@ import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.greaterThanOrEqualTo
 import coroutines.coAssertExecutesInLessThan
 import coroutines.coAssertExecutionTakesAtLeast
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -12,10 +11,8 @@ import kotlinx.coroutines.test.runBlockingTest
 import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
-import kotlin.time.ExperimentalTime
 import kotlin.time.seconds
 
-@UseExperimental(ExperimentalCoroutinesApi::class, ExperimentalTime::class)
 class Script_2_AdvanceTime {
 
     @Test

@@ -4,8 +4,11 @@ import api.User
 import api.UserService
 import io.mockk.coEvery
 import io.mockk.mockk
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.async
 import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.withTimeout
 import org.junit.jupiter.api.Test
 
 
@@ -18,7 +21,6 @@ suspend fun loadUser(backend: UserService): User =
     }
 
 
-@UseExperimental(ExperimentalCoroutinesApi::class)
 class Live_3_Timeout {
 
     private val user = User("Herbert")

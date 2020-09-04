@@ -1,17 +1,13 @@
 package talk.live
 
-import com.natpryce.hamkrest.anyElement
-import com.natpryce.hamkrest.assertion.assertThat
-import com.natpryce.hamkrest.isA
-import kotlinx.coroutines.*
-import kotlinx.coroutines.test.runBlockingTest
-import org.junit.jupiter.api.Assertions
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.supervisorScope
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
 import java.io.IOException
-import java.lang.IllegalArgumentException
 
-@UseExperimental(ExperimentalCoroutinesApi::class)
 class Live_7_ExceptionHandling {
 
     @Test

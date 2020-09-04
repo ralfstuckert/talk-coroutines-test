@@ -19,7 +19,6 @@ fun CoroutineScope.loadUserAsync(backend: UserService): Deferred<User> = async {
     }
 }
 
-@UseExperimental(ExperimentalCoroutinesApi::class)
 class Script_3_2_TimeoutAsync {
 
     private val user = User("Herbert")

@@ -1,6 +1,6 @@
 package talk.code
 
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import coroutines.AtomicBoolean
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.runBlockingTest
@@ -9,12 +9,12 @@ import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
-@UseExperimental(ExperimentalCoroutinesApi::class)
+
 class Script_1_Eager {
 
     @Test
     fun `no eager excecution in runBlocking`() = runBlocking {
-        var called = false
+        var called by AtomicBoolean(false)
         val job = launch {
             called = true
         }
@@ -26,7 +26,7 @@ class Script_1_Eager {
     // aus vorhergehendem Beispiel ableiten
     @Test
     fun `eager excecution in runBlockingTest`() = runBlockingTest {
-        var called = false
+        var called by AtomicBoolean(false)
         launch {
             called = true
         }
@@ -37,7 +37,7 @@ class Script_1_Eager {
     // aus vorhergehendem Beispiel ableiten
     @Test
     fun `eager execution until delay or yield`() = runBlockingTest {
-        var called = false
+        var called by AtomicBoolean(false)
         launch {
             yield()
             called = true

@@ -1,10 +1,11 @@
 package talk.live
 
-import kotlinx.coroutines.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runBlockingTest
 import org.junit.jupiter.api.Test
 
-@UseExperimental(ExperimentalCoroutinesApi::class)
 class Live_6_DetectUnrelatedJobs {
 
 

@@ -1,20 +1,18 @@
 package talk.code
 
-import kotlinx.coroutines.ExperimentalCoroutinesApi
+import coroutines.AtomicInt
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.yield
-import org.junit.jupiter.api.Assertions
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
-@UseExperimental(ExperimentalCoroutinesApi::class)
 class Script_8_PauseDispatcher {
 
     @Test
     fun `paused dispatcher does not execute eager`() = runBlockingTest {
-        var state = 0
+        var state by AtomicInt(0)
 
         pauseDispatcher()
         launch {
@@ -37,7 +35,7 @@ class Script_8_PauseDispatcher {
 
     @Test
     fun `resumeDispatcher() advances until idle`() = runBlockingTest {
-        var state = 0
+        var state by AtomicInt(0)
 
         pauseDispatcher()
         launch {
@@ -58,7 +56,7 @@ class Script_8_PauseDispatcher {
 
     @Test
     fun `pauseDispatcher {} resumes after executing block`() = runBlockingTest {
-        var state = 0
+        var state by AtomicInt(0)
 
         pauseDispatcher {
             launch {
