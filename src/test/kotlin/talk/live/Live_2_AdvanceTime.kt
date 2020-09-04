@@ -1,5 +1,6 @@
 package talk.live
 
+import coroutines.AtomicBoolean
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -28,7 +29,7 @@ class Live_2_AdvanceTime {
 
     @Test
     fun `no auto-advance in launched coroutine`() = runBlockingTest {
-        var called = false
+        var called by AtomicBoolean(false)
         launch {
             delay(1000)
             called = true

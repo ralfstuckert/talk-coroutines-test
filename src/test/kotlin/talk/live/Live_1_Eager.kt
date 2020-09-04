@@ -1,5 +1,6 @@
 package talk.live
 
+import coroutines.AtomicBoolean
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import org.junit.jupiter.api.Assertions.assertTrue
@@ -9,7 +10,8 @@ class Live_1_Eager {
 
     @Test
     fun `eager excecution`() = runBlocking {
-        var called = false
+        var called by AtomicBoolean(false)
+
         val job = launch {
             called = true
         }

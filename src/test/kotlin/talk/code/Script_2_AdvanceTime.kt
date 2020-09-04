@@ -2,6 +2,7 @@ package talk.code
 
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.greaterThanOrEqualTo
+import coroutines.AtomicBoolean
 import coroutines.coAssertExecutesInLessThan
 import coroutines.coAssertExecutionTakesAtLeast
 import kotlinx.coroutines.delay
@@ -34,7 +35,7 @@ class Script_2_AdvanceTime {
 
     @Test
     fun `does not auto-advance time in launched coroutine`() = runBlockingTest {
-        var called = false
+        var called by AtomicBoolean(false)
         launch {
             delay(1000)
             called = true
@@ -49,7 +50,7 @@ class Script_2_AdvanceTime {
     // aus vorhergehendem Beispiel ableiten
     @Test
     fun `advance time is reliable`() = runBlockingTest {
-        var called = false
+        var called by AtomicBoolean(false)
         launch {
             delay(1000)
             called = true

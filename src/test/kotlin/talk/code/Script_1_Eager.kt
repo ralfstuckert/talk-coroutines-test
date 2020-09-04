@@ -15,6 +15,7 @@ class Script_1_Eager {
     @Test
     fun `no eager excecution in runBlocking`() = runBlocking {
         var called by AtomicBoolean(false)
+
         val job = launch {
             called = true
         }
@@ -27,6 +28,7 @@ class Script_1_Eager {
     @Test
     fun `eager excecution in runBlockingTest`() = runBlockingTest {
         var called by AtomicBoolean(false)
+
         launch {
             called = true
         }
@@ -38,6 +40,7 @@ class Script_1_Eager {
     @Test
     fun `eager execution until delay or yield`() = runBlockingTest {
         var called by AtomicBoolean(false)
+
         launch {
             yield()
             called = true
