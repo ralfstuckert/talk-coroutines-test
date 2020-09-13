@@ -3,7 +3,7 @@
 - `runBlockingTest()` makes assumptions on time control
 and therefore detects uncompleted jobs by counting
 - usually a hint on using non-TestCoroutineDispatcher
-- show usage of `testDispatcher`
+- show usage of `testDispatcher` in `launch`
 
 - copy example and alter to using async-await:
 ```kotlin

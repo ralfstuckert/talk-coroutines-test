@@ -47,8 +47,8 @@ class Script_7_ExceptionHandling {
                 val child2 = launch() {
                     delay(1000)
                 }
-                assertThat(uncaughtExceptions, anyElement(isA<IOException>()))
             }
+            assertThat(uncaughtExceptions, anyElement(isA<IOException>()))
         }
 
 

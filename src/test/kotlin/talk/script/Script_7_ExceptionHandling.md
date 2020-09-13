@@ -1,7 +1,7 @@
 # Exception Handling
 
 ## uncaught exceptions
-- let example run and compare to runBlocking()
+- let example run and compare to `runBlockingTest()`
 - introduce `uncaughtExceptions` and let it run:
 ```kotlin
     // executed eagerly, so we can handle the exception right here
