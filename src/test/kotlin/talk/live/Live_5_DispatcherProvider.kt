@@ -8,7 +8,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.withContext
-import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertSame
 import org.junit.jupiter.api.Test
 
 /**
@@ -40,7 +40,7 @@ class Live_5_DispatcherProvider {
         }
 
         val loaded = loadUserIO(backend)
-        Assertions.assertSame(user, loaded)
+        assertSame(user, loaded)
     }
 
 

@@ -17,6 +17,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.withContext
 import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Assertions.assertSame
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import kotlin.coroutines.coroutineContext
@@ -62,19 +63,19 @@ class Script_5_DispatcherProvider {
         val dispatcherProvider = TestDispatcherProvider(testDispatcher)
 
         val loaded = loadUserProvidedDispatcher(backend, dispatcherProvider)
-        Assertions.assertSame(user, loaded)
+        assertSame(user, loaded)
     }
 
     @Test
     fun `pass DispatcherProvider via coroutine context`() = runBlockingTestProvided {
         val loaded = loadUserContextIO(backend)
-        Assertions.assertSame(user, loaded)
+        assertSame(user, loaded)
     }
 
     @Test
     fun `convenience function withIO()`() = runBlockingTestProvided {
         val loaded = loadUserWithIO(backend)
-        Assertions.assertSame(user, loaded)
+        assertSame(user, loaded)
     }
 
 
