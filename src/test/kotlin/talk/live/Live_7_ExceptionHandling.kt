@@ -12,7 +12,6 @@ class Live_7_ExceptionHandling {
 
     @Test
     fun `TestCoroutineExceptionHandler used by runBlockingTest() catches all exceptions`() {
-        assertThrows<IOException> {
             runBlocking() {
 
                 launch() {
@@ -24,7 +23,6 @@ class Live_7_ExceptionHandling {
                 }
 
             }
-        }
     }
 
 

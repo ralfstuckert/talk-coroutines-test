@@ -3,11 +3,13 @@ package talk.code
 import com.natpryce.hamkrest.anyElement
 import com.natpryce.hamkrest.assertion.assertThat
 import com.natpryce.hamkrest.isA
+import coroutines.DummyCoroutineExceptionHandler
 import coroutines.SilentTestCoroutineExceptionHandler
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.supervisorScope
 import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.withContext
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.assertThrows
@@ -53,7 +55,27 @@ class Script_7_ExceptionHandling {
 
 
     @Test
-    fun `use a custom exception handler in runBlockingTest() for testing supervisor behaviour`() =
+    fun `pass a dummy exception handler using withContext() for testing supervisor behaviour`() =
+        runBlockingTest {
+
+            withContext(DummyCoroutineExceptionHandler) {
+
+                supervisorScope() {
+                    val child1 = launch() {
+                        throw IOException()
+                    }
+
+                    val child2 = launch() {
+                        delay(1000)
+                    }
+                }
+
+            }
+        }
+
+
+    @Test
+    fun `use a custom test exception handler in runBlockingTest() for testing supervisor behaviour`() =
         runBlockingTest(SilentTestCoroutineExceptionHandler()) {
 
             supervisorScope() {
@@ -67,8 +89,6 @@ class Script_7_ExceptionHandling {
             }
             assertThat(uncaughtExceptions, anyElement(isA<IOException>()))
         }
-
-
 
 
 }

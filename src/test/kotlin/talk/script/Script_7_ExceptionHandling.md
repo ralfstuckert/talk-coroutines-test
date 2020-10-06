@@ -18,11 +18,14 @@
 ## Propagation in SupervisorScope
 - let it run with `runBlocking()`
 - now with `runBlockingTest()` and explain
-- introduce analyzing exceptions with `uncaughtExceptions`
+- introduce dummy exception handler
 ```kotlin
-    assertThat(uncaughtExceptions, anyElement(isA<IOException>()))
+   runBlockingTest {
+               withContext(DummyCoroutineExceptionHandler) {
 ```
-- introduce custom exception handler
+- dummy exception handler does not work if passed in `runBlockingTest()`
+  as it is not a `TestCoroutineExceptionHandler`
+- introduce custom test exception handler
 ```kotlin
    runBlockingTest(SilentTestCoroutineExceptionHandler()) {
 ```
