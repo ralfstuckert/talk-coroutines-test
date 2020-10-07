@@ -34,9 +34,8 @@ class Live_4_MainDispatcher {
         }
 
         val confirmation = confirmDone(uiMock)
-        // since the test dispatcher is used for main, time will be auto-advanced
-        assertEquals(Confirmation.OK, confirmation)
 
+        assertEquals(Confirmation.OK, confirmation)
     }
 
 

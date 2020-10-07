@@ -1,7 +1,9 @@
 # Exception Handling
 
 ## uncaught exceptions
-- let example run and compare to `runBlockingTest()`
+- let example run 
+- introduce `assertThrows { }`
+- compare to `runBlockingTest()`
 - introduce `uncaughtExceptions` and let it run:
 ```kotlin
     // executed eagerly, so we can handle the exception right here

@@ -45,7 +45,7 @@ class Script_4_MainDispatcher {
         }
 
         val confirmation = confirmDone(uiMock)
-        // since the test dispatcher is used for main, time will be auto-advanced
+
         assertEquals(Confirmation.OK, confirmation)
 
         // main dispatcher will be reset in tearDown()
